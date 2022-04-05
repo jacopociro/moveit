@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: Jacopo Ciro Soncini
     author_email: jacopo.soncini@gmail.com
-    generated_timestamp: 1648733283
+    generated_timestamp: 1649168966
