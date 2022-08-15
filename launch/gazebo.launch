@@ -13,7 +13,7 @@
   </include>
 
   <!-- send robot urdf to param server -->
-  <param name="robot_description" command="xacro  '$(find exp_rob_lab)/urdf/my_robot.urdf'" />
+  <param name="robot_description" textfile="$(find exp_rob_lab)/urdf/my_robot.urdf" />
 
   <!-- unpause only after loading robot model -->
   <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
@@ -28,5 +28,8 @@
   <!--<node name="gazebo_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller" />-->
   <!-- Load ROS controllers -->
   <include file="$(dirname)/ros_controllers.launch"/>
+
+      <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" ></node>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> 
 
 </launch>
